@@ -1,0 +1,38 @@
+body{
+
+}
+
+#balloons{
+	display: none;
+}
+
+#grayscale-img{
+	position: absolute;
+	top: 0;
+	opacity: 0.5;
+	border-style: solid;
+}
+
+#birthday-title{
+	color:gray;
+}
+
+#video{
+	display: none;
+}
+
+#video-controls{
+	position: absolute;
+	top: 246px;
+	width: 320px;
+	background-color: black;
+	display: none;
+}
+
+#play-pause, #mute{
+	color: white;
+}
+
+#volume-bar{
+	width: 100px;
+}
