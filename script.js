@@ -1,4 +1,3 @@
-//security.PrivilegeManager.enablePrivilege("UniversalPreferencesRead UniversalPreferencesWrite")
 var video;
 var scale = 0.5;
 window.onload = function() {
@@ -14,7 +13,7 @@ window.onload = function() {
   seekBarEvent();
   volumeBarEvent();
 
-  grayscalImg();
+  grayscaleImg();
 
   setInterval(captureVideo, 100);
 }
