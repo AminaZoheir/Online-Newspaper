@@ -1,0 +1,3 @@
+Canvas: http://www.w3schools.com/html/html5_canvas.asp
+Capture screenshot: http://odetocode.com/blogs/scott/archive/2013/01/04/capturing-html-5-video-to-an-image.aspx
+Pixlw Manipulation: http://www.html5canvastutorials.com/advanced/html5-canvas-grayscale-image-colors-tutorial/

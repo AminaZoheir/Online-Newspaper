@@ -2,11 +2,28 @@
 <html lang="en">
     <head>
         <title>Newspaper</title>
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        <script type="text/javascript" src="script.js"></script>
     </head>
     <body>
-    	<script type="text/javascript" src="script.js"></script>
-
+        <div class="wrapper"> 
+            <div id="birthday">
+                <h1 id="birthday-title">Is it your birthday?</h1>
+                <!-- <canvas id="grayscale-img" width="500" height="400"></canvas> -->
+                <img id="balloons" src="balloons.png">
+            </div>
+            <canvas id="grayscale-video" width="200" height="100"></canvas>
+            <video id="video" width="200" height="100">
+                <source src="video1.mp4" />
+            </video>
+            <div id="video-controls">
+                <a id="play-pause" class="play">Play <i class="fa-play"></i></a>
+                <input type="range" id="seek-bar" value="0">
+                <a id="mute">Mute</a>
+                <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+            </div>         
+        </div>
     </body>
 </html>
