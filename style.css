@@ -1,0 +1,23 @@
+body{
+	background: black;
+}
+
+#video{
+	display: none;
+}
+
+#video-controls{
+	position: absolute;
+	top: 246px;
+	width: 320px;
+	background-color: black;
+	display: none;
+}
+
+#play-pause, #mute{
+	color: white;
+}
+
+#volume-bar{
+	width: 100px;
+}
