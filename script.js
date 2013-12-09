@@ -1,9 +1,67 @@
 var video;
 var scale = 0.5;
-window.onload = function() {
+var guardian = "http://content.guardianapis.com/search?tag=news&show-fields=all&api-key=8ftf572yrfzzv8hct7hyc5mn";
+function poll_news(){
+  $.ajax({
+    url: guardian,
+    data: 'application/json',
+    dataType: 'jsonp',
+    success: function(data) // Variable data contains the data we get from serverside
+    {      
+      for(var i = 0; i< data.response.results.length;i++){
+        if($(data.response.results[i].fields.body).attr("src")){
+            var news_wrapper = $("<div class='item_news'><h3></h3><p class='item'></p></div>");
+            news_wrapper.find('h3').html(data.response.results[i].webTitle);
+            news_wrapper.find('p').html(data.response.results[i].fields.body);
+            $('.wrapper').append(news_wrapper);
+        }
+      }
+      $('.block-time').remove();
+      $('.gu_advert').remove();
+      $('.wrapper').hide();
+      $('.wrapper').fadeIn(500);
+      setTimeout(poll_news,1800000);
+    },error: function(data){
+      console.log(data);
+    }
+  });
+}
 
+
+window.onload = function() {
+  //starts news updating
+  poll_news();
   // Video
   video = document.getElementById("video");
+
+ 	var DateTime = new Date();
+ 	var strYear= DateTime.getFullYear();
+  var strMonth= DateTime.getMonth();
+  var month_name=new Array(12);
+ 	month_name[0]="January"
+ 	month_name[1]="February"
+	month_name[2]="March"
+	month_name[3]="April"
+	month_name[4]="May"
+	month_name[5]="June"
+	month_name[6]="July"
+	month_name[7]="August"
+	month_name[8]="September"
+	month_name[9]="October"
+	month_name[10]="November"     
+	month_name[11]="December"
+  var strDay = DateTime.getDate();
+	var weekday=new Array(7);
+	weekday[0]="Sunday";
+	weekday[1]="Monday";
+	weekday[2]="Tuesday";	
+	weekday[3]="Wednesday";
+	weekday[4]="Thursday";
+	weekday[5]="Friday";
+	weekday[6]="Saturday";
+  var tagDiv=document.getElementById("date");
+  tagDiv.innerText = weekday[DateTime.getDay()]+" "+ month_name[strMonth] + " "+ strDay + ", "  + " " + strYear;
+	
 
   // Buttons
   playButtonEvent();
