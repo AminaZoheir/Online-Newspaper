@@ -32,7 +32,6 @@ body {
 	border-top: solid thick;
 	margin-right: 20px;
 	margin-left: 20px;
-	font-family: Old English, serif;
 }
 
 #name{
@@ -59,18 +58,30 @@ body {
 .item_news p{
 	font-family: Font1, serif;
 	font-size:100%
-
 }
+
+#balloons{
+	display: none;
+	text-align: right;
+}
+
+#grayscale-img{
+	opacity: 0.7;
+}
+
+#birthday-title{
+	color:gray;
+}
+
 #video{
 	display: none;
 }
 
 #video-controls{
-	position: absolute;
-	top: 246px;
+	/*position: absolute;*/
+	/*top: 246px;*/
 	width: 320px;
 	background-color: black;
-	display: none;
 }
 
 #play-pause, #mute{

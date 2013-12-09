@@ -7,26 +7,28 @@
         <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
         <script type="text/javascript" src="script.js"></script>
     </head>
-    <body >
+    <body>
     	<div id="layout">
 	    	<h1 id="name">Al Aminat</h1>
 	    	<div id="date"> </div>
 	    	<div id="paper">
-		        <div class="wrapper">          
-		        </div>
-		    	<div id="birthday">
-		    		<img id="balloons" src="balloons.png">
-		    	</div>
-		    	<canvas id="grayscale-video" width="200" height="100"></canvas>
-		    	<video id="video" width="200" height="100">
-				    <source src="video1.mp4" />
-				</video>
-				<div id="video-controls">
-				    <a id="play-pause" class="play">Play <i class="fa-play"></i></a>
-				    <input type="range" id="seek-bar" value="0">
-				    <a id="mute">Mute</a>
-				    <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
-				</div>
+		        <div class="wrapper"> 
+            		<canvas id="grayscale-video" width="200" height="100"></canvas>
+            		<video id="video" width="200" height="100">
+                		<source src="video1.mp4" />
+            		</video>
+            		<div id="video-controls">
+                		<a id="play-pause" class="play">Play <i class="fa-play"></i></a>
+                		<input type="range" id="seek-bar" value="0">
+                		<a id="mute">Mute</a>
+                		<input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+            		</div> 
+            		<div id="birthday" class="item_news">
+                		<h1 id="birthday-title">Is it your birthday?</h1>
+                		<canvas id="grayscale-img" width="500" height="400"></canvas> 
+                		<img id="balloons" src="balloons.png">
+            		</div>        
+        		</div>
 			</div>
 		</div>
     </body>
