@@ -1,7 +1,19 @@
 var video;
 var scale = 0.5;
-window.onload = function() {
 
+var guardian = "http://content.guardianapis.com/search?tag=news&show-fields=all&api-key=8ftf572yrfzzv8hct7hyc5mn";
+
+window.onload = function() {
+  poll_news();
+//   if(typeof(Worker)!=="undefined")
+//   {
+//   var v = new Worker("video.js");
+//   //var p = new Worker("poller.js");
+//   }
+// else
+//   {
+//   // Sorry! No Web Worker support..
+//   }
   // Video
   video = document.getElementById("video");
 
@@ -13,9 +25,40 @@ window.onload = function() {
   seekBarEvent();
   volumeBarEvent();
 
-  grayscaleImg();
+  setInterval(captureVideo, 100);
 
-  //setInterval(captureVideo, 100);
+  grayscaleImg();
+  
+}
+
+
+
+function poll_news(){
+  $.ajax({
+    url: guardian,
+    data: 'application/json',
+    dataType: 'jsonp',
+    success: function(data) // Variable data contains the data we get from serverside
+    {      
+      for(var i = 0; i< data.response.results.length;i++){
+        if($(data.response.results[i].fields.body).attr("src")){
+            var news_wrapper = $("<div class='item_news'><h3></h3><p class='item'></p></div>");
+            news_wrapper.find('h3').html(data.response.results[i].webTitle);
+            news_wrapper.find('p').html(data.response.results[i].fields.body);
+            $('.wrapper').append(news_wrapper);
+        }
+      }
+      $('a').attr("href","");
+      $('a').attr("src","");
+      $('.block-time').remove();
+      $('.gu_advert').remove();
+      $('.wrapper').hide();
+      $('.wrapper').fadeIn(500);
+      //setTimeout(poll_news,1800000);
+    },error: function(data){
+      console.log(data);
+    }
+  });
 }
 
 function playButtonEvent(){
