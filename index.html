@@ -3,12 +3,21 @@
     <head>
         <title>Newspaper</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
-		<script type="text/javascript" src="script.js"></script>
+    	<script type="text/javascript" src="script.js"></script>
     </head>
     <body background="3887469159_ea091e177d_b.jpg">
-    	
-    	<div id="paper">
-    		<h1>HEllO</h1>
+    	<div id="birthday">
+    		<img id="balloons" src="balloons.png">
     	</div>
+    	<canvas id="grayscale-video" width="200" height="100"></canvas>
+    	<video id="video" width="200" height="100">
+		    <source src="video1.mp4" />
+		</video>
+		<div id="video-controls">
+		    <a id="play-pause" class="play">Play <i class="fa-play"></i></a>
+		    <input type="range" id="seek-bar" value="0">
+		    <a id="mute">Mute</a>
+		    <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+		</div>
     </body>
 </html>
