@@ -1,5 +1,5 @@
 body{
-	background: black;
+	padding:20px;
 }
 
 #video{
@@ -20,4 +20,28 @@ body{
 
 #volume-bar{
 	width: 100px;
+}
+
+.wrapper
+{
+	-moz-column-count:2; /* Firefox */
+	-webkit-column-count:2; /* Safari and Chrome */
+	column-count:2;
+	-moz-column-gap:40px; /* Firefox */
+	-webkit-column-gap:40px; /* Safari and Chrome */
+	column-gap:40px;
+	-moz-column-rule:1px outset #000; /* Firefox */
+	-webkit-column-rule:1px outset #000; /* Safari and Chrome */
+	column-rule:1px outset #000;
+}
+
+.item{
+	-moz-column-count:3; /* Firefox */
+	-webkit-column-count:3; /* Safari and Chrome */
+	column-count:3;
+	-moz-column-gap:15px; /* Firefox */
+	-webkit-column-gap:15px; /* Safari and Chrome */
+	column-gap:15px;
+	height: auto;
+	width: auto;
 }
